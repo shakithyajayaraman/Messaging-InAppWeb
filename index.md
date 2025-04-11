@@ -7,8 +7,8 @@
 
 			embeddedservice_bootstrap.init(
 				'00DQy00000HIzzJ',
-				'MessagingWebDeployment',
-				'https://creative-bear-b8shsi-dev-ed.trailblaze.my.site.com/ESWMessagingWebDeployment1744359291863',
+				'Ursa_Major_Chat',
+				'https://creative-bear-b8shsi-dev-ed.trailblaze.my.site.com/ESWUrsaMajorChat1744409620663',
 				{
 					scrt2URL: 'https://creative-bear-b8shsi-dev-ed.trailblaze.my.salesforce-scrt.com'
 				}
@@ -18,8 +18,7 @@
 		}
 	};
 </script>
-<script type='text/javascript' src='https://creative-bear-b8shsi-dev-ed--c.trailblaze.vf.force.com/apex/ESWMessagingWebDeployment1744359291863/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
-
+<script type='text/javascript' src='https://creative-bear-b8shsi-dev-ed.trailblaze.my.site.com/ESWUrsaMajorChat1744409620663/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'>
+</script>
   </body>
 </html>
