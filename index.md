@@ -1,5 +1,6 @@
 <html>
   <body>
+	  
     <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
@@ -18,7 +19,7 @@
 		}
 	};
 </script>
-<script type='text/javascript' src='https://creative-bear-b8shsi-dev-ed.trailblaze.my.site.com/ESWUrsaMajorChat1744409620663/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'>
-</script>
+<script type='text/javascript' src='https://creative-bear-b8shsi-dev-ed.trailblaze.my.site.com/ESWUrsaMajorChat1744409620663/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
   </body>
 </html>
