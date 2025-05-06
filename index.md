@@ -18,7 +18,7 @@
 					scrt2URL: 'https://creative-bear-b8shsi-dev-ed.trailblaze.my.salesforce-scrt.com'
 				}
 			);
-   			
+   			console.log('load1');
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
