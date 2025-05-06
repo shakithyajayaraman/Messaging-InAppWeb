@@ -4,7 +4,7 @@
  </head>
 	
   <body>
-	
+	<div id="page"> Webpage Home </div>
     <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
@@ -29,7 +29,8 @@
 	    console.log(event.data);
             const eventmsg = event.data;
             if (eventmsg.type === 'chasitor.sendMessage') {
-                console.log('Received message from chatbot:', eventmsg.message);
+                console.log('Received message:', eventmsg.message);
+		document.getElementById("page").innerText = "eventmsg.message";
                 // Handle the message as needed
             }
         });
