@@ -4,7 +4,7 @@
  </head>
 	
   <body>
-	<div>This is the main page</div>  
+	<div id="text">This is the main page</div>  
     <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
