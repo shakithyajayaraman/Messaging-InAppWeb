@@ -25,8 +25,8 @@
            // if (event.origin !== 'https://your-trusted-domain.com') {
            //     return;
            // }
-	    console.log('msg evt 2');
-		console.log(message);
+	    
+		console.log(event.data);
             const message = event.data;
             if (message.type === 'chasitor.sendMessage') {
                 console.log('Received message from chatbot:', message);
