@@ -40,14 +40,12 @@
 		}
 	}; 
  
-
-    <script>
         const div = document.getElementById('myDiv');
 
         div.addEventListener('input', function() {
             console.log('Content changed:', div.innerHTML);
         });
-    </script>
+    
 </script>
 <script type='text/javascript' src='https://creative-bear-b8shsi-dev-ed.trailblaze.my.site.com/ESWUrsaMajorChat1744409620663/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'>
 	
