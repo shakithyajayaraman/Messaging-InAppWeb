@@ -18,13 +18,14 @@
 					scrt2URL: 'https://creative-bear-b8shsi-dev-ed.trailblaze.my.salesforce-scrt.com'
 				}
 			);
-   			document.getElementById("myBtn").addEventListener("click", function() {
-  				alert("Message received!"); }
-      			);
+   			
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
 	};
+ 	document.getElementsByTagName("button").addEventListener("click", function () {
+				document.getElementById("text").innerText = "Message Received";
+			});
 </script>
 <script type='text/javascript' src='https://creative-bear-b8shsi-dev-ed.trailblaze.my.site.com/ESWUrsaMajorChat1744409620663/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
