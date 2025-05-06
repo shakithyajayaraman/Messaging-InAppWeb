@@ -19,13 +19,7 @@
 				}
 			);
    			console.log('load1');
-		} catch (err) {
-			console.error('Error loading Embedded Messaging: ', err);
-		}
-	}; 	
-</script>
-<script type='text/javascript' src='https://creative-bear-b8shsi-dev-ed.trailblaze.my.site.com/ESWUrsaMajorChat1744409620663/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'>
-	window.addEventListener('message', function(event) {
+      window.addEventListener('message', function(event) {
 		console.log('msg evt 1');
             // Ensure the message is from a trusted source
             if (event.origin !== 'https://your-trusted-domain.com') {
@@ -39,6 +33,13 @@
                 // Handle the message as needed
             }
         });
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	}; 	
+</script>
+<script type='text/javascript' src='https://creative-bear-b8shsi-dev-ed.trailblaze.my.site.com/ESWUrsaMajorChat1744409620663/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'>
+	
 </script>
 
   </body>
