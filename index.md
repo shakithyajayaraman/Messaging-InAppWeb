@@ -2,6 +2,7 @@
  <head>
 	 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
  </head>
+	
   <body>
 	  
     <script type='text/javascript'>
@@ -17,6 +18,10 @@
 					scrt2URL: 'https://creative-bear-b8shsi-dev-ed.trailblaze.my.salesforce-scrt.com'
 				}
 			);
+   			document.getElementById("myBtn").addEventListener("click", myFunction);
+			function myFunction() {
+  				alert ("Hello World!");
+			}
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
