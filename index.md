@@ -31,7 +31,7 @@
             const eventmsg = event.data;
             if (eventmsg.type === 'chasitor.sendMessage') {
                 console.log('Received message:', eventmsg.message);
-		document.getElementById("page").innerText = eventmsg.message;
+		document.getElementById("myDiv").innerText = eventmsg.message;
                 // Handle the message as needed
             }
         });
@@ -40,7 +40,7 @@
 		}
 	}; 
  
-        const div = document.getElementById('page');
+        const div = document.getElementById('myDiv');
 
         div.addEventListener('input', function() {
             console.log('Content changed:', div.innerHTML);
