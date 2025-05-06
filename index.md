@@ -26,11 +26,13 @@
 </script>
 <script type='text/javascript' src='https://creative-bear-b8shsi-dev-ed.trailblaze.my.site.com/ESWUrsaMajorChat1744409620663/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'>
 	window.addEventListener('message', function(event) {
+		console.log('msg evt 1');
             // Ensure the message is from a trusted source
             if (event.origin !== 'https://your-trusted-domain.com') {
                 return;
             }
-
+	    console.log('msg evt 2');
+		console.log(message);
             const message = event.data;
             if (message.type === 'chasitor.sendMessage') {
                 console.log('Received message from chatbot:', message);
