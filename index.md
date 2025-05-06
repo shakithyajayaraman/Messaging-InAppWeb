@@ -40,10 +40,11 @@
 		}
 	}; 
  
-        const div = document.getElementById('myDiv');
+        const div = document.getElementById('page');
 
         div.addEventListener('input', function() {
             console.log('Content changed:', div.innerHTML);
+	    embeddedservice_bootstrap.utilAPI.sendTextMessage(div.innerHTML);
         });
     
 </script>
