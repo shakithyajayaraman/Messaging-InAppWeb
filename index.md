@@ -26,10 +26,10 @@
            //     return;
            // }
 	    
-		console.log(event.data);
-            const message = event.data;
-            if (message.type === 'chasitor.sendMessage') {
-                console.log('Received message from chatbot:', message);
+	    console.log(event.data);
+            const eventmsg = event.data;
+            if (eventmsg.type === 'chasitor.sendMessage') {
+                console.log('Received message from chatbot:', eventmsg.message);
                 // Handle the message as needed
             }
         });
