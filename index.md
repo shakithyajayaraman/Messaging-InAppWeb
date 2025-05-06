@@ -18,10 +18,9 @@
 					scrt2URL: 'https://creative-bear-b8shsi-dev-ed.trailblaze.my.salesforce-scrt.com'
 				}
 			);
-   			document.getElementById("myBtn").addEventListener("click", myFunction);
-			function myFunction() {
-  				alert ("Hello World!");
-			}
+   			document.getElementById("myBtn").addEventListener("click", function() {
+  				alert("Message received!"); }
+      			);
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
