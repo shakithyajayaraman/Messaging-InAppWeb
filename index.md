@@ -23,7 +23,7 @@
 			console.error('Error loading Embedded Messaging: ', err);
 		}
 	};
- 	document.getElementsByTagName("button").addEventListener("click", function () {
+ 	document.getElementById("myBtn").addEventListener("click", function () {
 				document.getElementById("text").innerText = "Message Received";
 			});
 </script>
