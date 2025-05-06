@@ -22,9 +22,9 @@
       window.addEventListener('message', function(event) {
 		console.log('msg evt 1');
             // Ensure the message is from a trusted source
-            if (event.origin !== 'https://your-trusted-domain.com') {
-                return;
-            }
+           // if (event.origin !== 'https://your-trusted-domain.com') {
+           //     return;
+           // }
 	    console.log('msg evt 2');
 		console.log(message);
             const message = event.data;
