@@ -5,6 +5,7 @@
 	
   <body>
 	<div id="page"> Webpage Home </div>
+	  <div id="myDiv" contenteditable="true">Edit me!</div>
     <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
@@ -37,7 +38,16 @@
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
-	}; 	
+	}; 
+ 
+
+    <script>
+        const div = document.getElementById('myDiv');
+
+        div.addEventListener('input', function() {
+            console.log('Content changed:', div.innerHTML);
+        });
+    </script>
 </script>
 <script type='text/javascript' src='https://creative-bear-b8shsi-dev-ed.trailblaze.my.site.com/ESWUrsaMajorChat1744409620663/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'>
 	
