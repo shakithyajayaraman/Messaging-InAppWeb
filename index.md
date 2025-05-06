@@ -4,7 +4,7 @@
  </head>
 	
   <body>
-	<div id="text">This is the main page</div>  
+	
     <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
@@ -22,12 +22,22 @@
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
-	};
- 	document.getElementById("myBtn").addEventListener("click", function () {
-				document.getElementById("text").innerText = "Message Received";
-			});
+	}; 	
 </script>
-<script type='text/javascript' src='https://creative-bear-b8shsi-dev-ed.trailblaze.my.site.com/ESWUrsaMajorChat1744409620663/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+<script type='text/javascript' src='https://creative-bear-b8shsi-dev-ed.trailblaze.my.site.com/ESWUrsaMajorChat1744409620663/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'>
+	window.addEventListener('message', function(event) {
+            // Ensure the message is from a trusted source
+            if (event.origin !== 'https://your-trusted-domain.com') {
+                return;
+            }
+
+            const message = event.data;
+            if (message.type === 'chasitor.sendMessage') {
+                console.log('Received message from chatbot:', message);
+                // Handle the message as needed
+            }
+        });
+</script>
 
   </body>
 </html>
