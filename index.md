@@ -30,7 +30,7 @@
             const eventmsg = event.data;
             if (eventmsg.type === 'chasitor.sendMessage') {
                 console.log('Received message:', eventmsg.message);
-		document.getElementById("page").innerText = "eventmsg.message";
+		document.getElementById("page").innerText = eventmsg.message;
                 // Handle the message as needed
             }
         });
