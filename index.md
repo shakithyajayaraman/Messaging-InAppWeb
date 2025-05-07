@@ -20,9 +20,9 @@
 					scrt2URL: 'https://creative-bear-b8shsi-dev-ed.trailblaze.my.salesforce-scrt.com'
 				}
 			);
-   			console.log('load1');
+   			
       window.addEventListener('message', function(event) {
-		console.log('msg evt 1');
+	
             // Ensure the message is from a trusted source
            // if (event.origin !== 'https://your-trusted-domain.com') {
            //     return;
@@ -32,8 +32,9 @@
             const eventmsg = event.data;
             if (eventmsg.type === 'chasitor.sendMessage') {
                 console.log('Received message:', eventmsg.message);
-		document.getElementById("myDiv").innerText = eventmsg.message;
-  document.getElementById("custId").innerText = eventmsg.message;
+		const div = document.getElementById('myDiv');
+		div.innerText = eventmsg.message;
+ 		embeddedservice_bootstrap.utilAPI.sendTextMessage(div.innerHTML);
                 // Handle the message as needed
             }
         });
@@ -42,7 +43,7 @@
 		}
 	}; 
  
-        const div = document.getElementById('custId');
+        const div = document.getElementById('page');
 
         div.addEventListener('input', function() {
             console.log('Content changed:', div.innerHTML);
