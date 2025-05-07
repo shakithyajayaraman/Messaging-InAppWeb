@@ -5,6 +5,7 @@
 	
   <body>
 	<div id="page"> Webpage Home </div>
+	  <input type="hidden" id="custId" name="custId" value="3487">
 	  <div id="myDiv" contenteditable="true">Edit me!</div>
     <script type='text/javascript'>
 	function initEmbeddedMessaging() {
@@ -32,6 +33,7 @@
             if (eventmsg.type === 'chasitor.sendMessage') {
                 console.log('Received message:', eventmsg.message);
 		document.getElementById("myDiv").innerText = eventmsg.message;
+  document.getElementById("custId").innerText = eventmsg.message;
                 // Handle the message as needed
             }
         });
@@ -40,7 +42,7 @@
 		}
 	}; 
  
-        const div = document.getElementById('myDiv');
+        const div = document.getElementById('custId');
 
         div.addEventListener('input', function() {
             console.log('Content changed:', div.innerHTML);
