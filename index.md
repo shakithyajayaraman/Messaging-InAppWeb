@@ -33,8 +33,8 @@
             if (eventmsg.type === 'chasitor.sendMessage') {
                 console.log('Received message:', eventmsg.message);
 		const div = document.getElementById('myDiv');
-		div.innerText = 'lwc:hidden '+ eventmsg.message;
- 		embeddedservice_bootstrap.utilAPI.sendTextMessage(div.innerHTML);
+		div.innerText = eventmsg.message;
+ 		embeddedservice_bootstrap.utilAPI.sendTextMessage('lwc:hidden '+ div.innerHTML);
                 // Handle the message as needed
             }
         });
