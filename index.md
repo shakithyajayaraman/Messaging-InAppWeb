@@ -32,9 +32,9 @@
             const eventmsg = event.data;
             if (eventmsg.type === 'chasitor.sendMessage') {
                 console.log('Received message:', eventmsg.message);
-		const div = document.getElementById('myDiv');
-		div.innerText = eventmsg.message;
- 		embeddedservice_bootstrap.utilAPI.sendTextMessage('lwc:hidden:'+ div.innerHTML);
+		//const div = document.getElementById('myDiv');
+		//div.innerText = eventmsg.message;
+ 		embeddedservice_bootstrap.utilAPI.sendTextMessage('lwc:hidden:'+ eventmsg.message);
                 // Handle the message as needed
             }
         });
