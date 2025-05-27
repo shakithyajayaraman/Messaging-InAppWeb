@@ -32,8 +32,9 @@
             const eventmsg = event.data;
             if (eventmsg.type === 'chasitor.sendMessage') {
                 console.log('Received message:', eventmsg.message);
-		//const div = document.getElementById('myDiv');
-		//div.innerText = eventmsg.message;
+		console.log(eventmsg.message.detail);
+  		console.log(eventmsg.message.detail.id);
+    		console.log(eventmsg.message.detail.value);
  		embeddedservice_bootstrap.utilAPI.sendTextMessage('lwc:hidden:'+ eventmsg.message);
                 // Handle the message as needed
             }
