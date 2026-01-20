@@ -4,56 +4,69 @@
  </head>
 	
   <body>
-	<div id="page"> Webpage Home </div>
-	  <input type="hidden" id="custId" name="custId" value="3487">
-	  <div id="myDiv" contenteditable="true">Edit me!</div>
-    <script type='text/javascript'>
-	function initEmbeddedMessaging() {
-		try {
-			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-
-			embeddedservice_bootstrap.init(
-				'00DQy00000HIzzJ',
-				'Ursa_Major_Chat',
-				'https://creative-bear-b8shsi-dev-ed.trailblaze.my.site.com/ESWUrsaMajorChat1744409620663',
-				{
-					scrt2URL: 'https://creative-bear-b8shsi-dev-ed.trailblaze.my.salesforce-scrt.com'
-				}
-			);
-   			
-      window.addEventListener('message', function(event) {
-	
-            // Ensure the message is from a trusted source
-           // if (event.origin !== 'https://your-trusted-domain.com') {
-           //     return;
-           // }
-	    
-	    console.log(event.data);
-            const eventmsg = event.data;
-            if (eventmsg.type === 'chasitor.sendMessage') {
-                console.log('Received message:', eventmsg.message);
-		console.log(eventmsg.message);
-  		console.log(eventmsg.message.id);
-    		console.log(eventmsg.message.value);
- 		embeddedservice_bootstrap.utilAPI.sendTextMessage('lwc:hidden:'+ eventmsg.message);
-                // Handle the message as needed
-            }
-        });
-		} catch (err) {
-			console.error('Error loading Embedded Messaging: ', err);
-		}
-	}; 
- 
-        const div = document.getElementById('page');
-
-        div.addEventListener('input', function() {
-            console.log('Content changed:', div.innerHTML);
-	    embeddedservice_bootstrap.utilAPI.sendTextMessage(div.innerHTML);
-        });
+	<div id="page"> Webpage Home </div>			
     
-</script>
-<script type='text/javascript' src='https://creative-bear-b8shsi-dev-ed.trailblaze.my.site.com/ESWUrsaMajorChat1744409620663/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'>
-	
+<style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #003656;
+		font-family: "Roboto", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #003656;
+	}
+</style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+	var initESW = function(gslbBaseURL) {
+		embedded_svc.settings.displayHelpButton = true; //Or false
+		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+
+		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+		// Settings for Chat
+		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+			// Returns a valid button ID.
+		//};
+		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+		embedded_svc.settings.entryFeature = 'LiveAgent';
+
+		embedded_svc.init(
+			'https://tti-fc--sandbox2.sandbox.my.salesforce.com',
+			'https://tti-fc--sandbox2.sandbox.my.site.com/vax',
+			gslbBaseURL,
+			'00DRR00000Mh2i3',
+			'VaxChat',
+			{
+				baseLiveAgentContentURL: 'https://c.la12s-core1.sfdc-cehfhs.salesforceliveagent.com/content',
+				deploymentId: '57220000000CcF1',
+				buttonId: '57320000000CcfZ',
+				baseLiveAgentURL: 'https://d.la12s-core1.sfdc-cehfhs.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I5I000000Xr2lUAC_175c35de580',
+				isOfflineSupportEnabled: false
+			}
+		);
+	};
+
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://tti-fc--sandbox2.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
 </script>
 
   </body>
