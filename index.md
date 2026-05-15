@@ -1,6 +1,6 @@
 <div id="lightning"></div>
 
-<script src="https://crm.vax.co.uk/lightning/lightning.out.js"></script>
+<script src="https://tti-fc--sandbox2.sandbox.my.site.com/vax/lightning/lightning.out.js"></script>
 <script>
 let flowNameWeb = "SF_ProductDiagnostic_Website";
 let params = new URLSearchParams(document.location.search);
@@ -21,6 +21,6 @@ $Lightning.use(
             }
         );
     },
-    'https://crm.vax.co.uk' // Community endpoint                                            
+    'https://tti-fc--sandbox2.sandbox.my.site.com/vax' // Community endpoint                                            
 );
 </script>
