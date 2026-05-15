@@ -1,73 +1,26 @@
-<html>
- <head>
-	 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
- </head>
-	
-  <body>
-	<div id="page"> Webpage Home </div>			
-    
-<style type='text/css'>
-	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #003656;
-		font-family: "Roboto", sans-serif;
-	}
-	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #003656;
-	}
-</style>
+<div id="lightning"></div>
 
-<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
-<script type='text/javascript'>
-	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
-
-		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-
-		// Settings for Chat
-		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-			// Returns a valid button ID.
-		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-
-		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-		embedded_svc.settings.entryFeature = 'LiveAgent';
-
-		embedded_svc.init(
-			'https://tti-fc--sandbox2.sandbox.my.salesforce.com',
-			'https://tti-fc--sandbox2.sandbox.my.site.com/vax',
-			gslbBaseURL,
-			'00DRR00000Mh2i3',
-			'VaxChat',
-			{
-				baseLiveAgentContentURL: 'https://c.la12s-core1.sfdc-cehfhs.salesforceliveagent.com/content',
-				deploymentId: '57220000000CcF1',
-				buttonId: '57320000000CcfZ',
-				baseLiveAgentURL: 'https://d.la12s-core1.sfdc-cehfhs.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I5I000000Xr2lUAC_175c35de580',
-				isOfflineSupportEnabled: false
-			}
-		);
-	};
-
-	if (!window.embedded_svc) {
-		var s = document.createElement('script');
-		s.setAttribute('src', 'https://tti-fc--sandbox2.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-		s.onload = function() {
-			initESW(null);
-		};
-		document.body.appendChild(s);
-	} else {
-		initESW('https://service.force.com');
-	}
+<script src="https://crm.vax.co.uk/lightning/lightning.out.js"></script>
+<script>
+let flowNameWeb = "SF_ProductDiagnostic_Website";
+let params = new URLSearchParams(document.location.search);
+let source = params.get("id") ?? "none";
+$Lightning.use(
+    "c:ProductDiagnosticAppDependencies", // name of the Lightning app
+    function() { 
+        // Callback once framework and app loaded
+        $Lightning.createComponent(
+            "c:productDiagnosticApp", // top-level component of your app
+            {
+                flowName: flowNameWeb,
+				source: source
+            }, // attributes to set on the component when created
+            "lightning", // the DOM location to insert the component
+            function(cmp) {
+                // callback when component is created and active on the page
+            }
+        );
+    },
+    'https://crm.vax.co.uk' // Community endpoint                                            
+);
 </script>
-
-  </body>
-</html>
