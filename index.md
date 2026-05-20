@@ -5,6 +5,7 @@
 let flowNameWeb = "SF_ProductDiagnostic_Website";
 let params = new URLSearchParams(document.location.search);
 let source = params.get("id") ?? "none";
+source = "CLSV-B4KS";
 $Lightning.use(
     "c:ProductDiagnosticAppDependencies", // name of the Lightning app
     function() { 
